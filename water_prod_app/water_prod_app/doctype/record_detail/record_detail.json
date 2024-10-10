@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-10 22:28:09.694018",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "reading",
+  "from_batch",
+  "cleared"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "reading",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reading"
+  },
+  {
+   "fieldname": "from_batch",
+   "fieldtype": "Data",
+   "label": "From Batch"
+  },
+  {
+   "default": "0",
+   "fieldname": "cleared",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Cleared"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-10-10 22:41:59.763263",
+ "modified_by": "Administrator",
+ "module": "Water Prod App",
+ "name": "Record Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

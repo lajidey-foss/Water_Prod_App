@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-10 22:37:49.430312",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "machine_id",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "machine_id",
+   "fieldtype": "Data",
+   "label": "Machine ID"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Data",
+   "label": "Remark"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-10 22:38:42.348977",
+ "modified_by": "Administrator",
+ "module": "Water Prod App",
+ "name": "Machine",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

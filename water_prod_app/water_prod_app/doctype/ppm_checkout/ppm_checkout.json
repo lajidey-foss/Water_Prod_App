@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-10 22:11:35.750637",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "checkout_id",
+  "date",
+  "status",
+  "issue_from",
+  "column_break_qsym",
+  "company",
+  "operator",
+  "machine",
+  "to_warehouse",
+  "section_break_mfty",
+  "readings"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nPending\nApproved"
+  },
+  {
+   "fieldname": "issue_from",
+   "fieldtype": "Link",
+   "label": "Issue From",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "to_warehouse",
+   "fieldtype": "Link",
+   "label": "To Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "readings",
+   "fieldtype": "Table",
+   "label": "Readings",
+   "options": "Record Detail"
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fieldname": "column_break_qsym",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_mfty",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "machine",
+   "fieldtype": "Link",
+   "label": "Machine",
+   "options": "Machine"
+  },
+  {
+   "fieldname": "checkout_id",
+   "fieldtype": "Data",
+   "label": "Checkout ID"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-10 22:56:24.743419",
+ "modified_by": "Administrator",
+ "module": "Water Prod App",
+ "name": "PPM Checkout",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
