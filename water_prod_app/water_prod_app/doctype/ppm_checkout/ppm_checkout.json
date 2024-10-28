@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2024-10-10 22:11:35.750637",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,6 +10,7 @@
   "date",
   "status",
   "issue_from",
+  "naming_series",
   "column_break_qsym",
   "company",
   "operator",
@@ -77,11 +79,16 @@
    "fieldname": "checkout_id",
    "fieldtype": "Data",
    "label": "Checkout ID"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 22:56:24.743419",
+ "modified": "2024-10-13 15:26:18.855480",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "PPM Checkout",

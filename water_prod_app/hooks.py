@@ -137,13 +137,11 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Stock Entry": {
+		"after_insert": "water_prod_app.utils.prod_mat.work_flow"
+	}
+}
 
 # Scheduled Tasks
 # ---------------

@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-22 23:00:21.968232",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "description",
+  "cost_per_item",
+  "cost_type",
+  "is_approved"
+ ],
+ "fields": [
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "cost_per_item",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Cost Per Item"
+  },
+  {
+   "fieldname": "cost_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Cost Type",
+   "options": "Mandatory\nOptional"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_approved",
+   "fieldtype": "Check",
+   "label": "Is Approved"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-10-23 14:55:14.312841",
+ "modified_by": "Administrator",
+ "module": "Water Prod App",
+ "name": "PMwise Cost Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

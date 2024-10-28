@@ -6,7 +6,12 @@
  "engine": "InnoDB",
  "field_order": [
   "operator_id",
-  "remark"
+  "remark",
+  "tag_link_to",
+  "user_code",
+  "user_name",
+  "employee_code",
+  "employee_name"
  ],
  "fields": [
   {
@@ -18,11 +23,41 @@
    "fieldname": "remark",
    "fieldtype": "Data",
    "label": "Remark"
+  },
+  {
+   "fieldname": "tag_link_to",
+   "fieldtype": "Link",
+   "label": "Tag Link To",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "user_code",
+   "fieldtype": "Link",
+   "label": "User Code",
+   "options": "User"
+  },
+  {
+   "fetch_from": "user_code.full_name",
+   "fieldname": "user_name",
+   "fieldtype": "Data",
+   "label": "User Name"
+  },
+  {
+   "fieldname": "employee_code",
+   "fieldtype": "Link",
+   "label": "Employee Code",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee_code.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 22:35:11.462521",
+ "modified": "2024-10-13 15:15:33.727182",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "Operator",

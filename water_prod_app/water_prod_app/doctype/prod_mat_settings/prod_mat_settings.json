@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-22 22:49:10.089064",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "mwise_series",
+  "manufac_expense_head",
+  "section_break_gdtd",
+  "charges_details",
+  "total_extra_cost",
+  "section_break_tgay",
+  "column_break_hywc",
+  "pm_series"
+ ],
+ "fields": [
+  {
+   "description": "{COY}.- to include company short name or code",
+   "fieldname": "pm_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "PM Series",
+   "options": "\nRPM-.YYYY.-"
+  },
+  {
+   "fieldname": "section_break_gdtd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_extra_cost",
+   "fieldtype": "Currency",
+   "label": "Total Extra Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "charges_details",
+   "fieldtype": "Table",
+   "label": "Charges Details",
+   "options": "PMwise Cost Details"
+  },
+  {
+   "description": "INV-.YYYY.-.{branch}.-.MM.-.####",
+   "fieldname": "mwise_series",
+   "fieldtype": "Data",
+   "label": "MWise Series"
+  },
+  {
+   "fieldname": "column_break_hywc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_tgay",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "description": "account_type: \"in\",\n\t\t\t[\n\t\t\t\t\t\t\t\t\t\"Tax\",\n\t\t\t\t\t\t\t\t\t\"Chargeable\",\n\t\t\t\t\t\t\t\t\t\"Income Account\",\n\t\t\t\t\t\t\t\t\t\"Expenses Included In Valuation\",\n\t\t\t\t\t\t\t\t\t\"Expenses Included In Asset Valuation\",\n\t\t\t\t\t\t\t\t]",
+   "fieldname": "manufac_expense_head",
+   "fieldtype": "Link",
+   "label": "Manufac Expense Head",
+   "options": "Account"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-10-25 00:32:54.821824",
+ "modified_by": "Administrator",
+ "module": "Water Prod App",
+ "name": "Prod Mat Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
