@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:machine_id",
  "creation": "2024-10-10 22:37:49.430312",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,7 +13,8 @@
   {
    "fieldname": "machine_id",
    "fieldtype": "Data",
-   "label": "Machine ID"
+   "label": "Machine ID",
+   "unique": 1
   },
   {
    "fieldname": "remark",
@@ -22,10 +24,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 22:38:42.348977",
+ "modified": "2024-11-10 10:43:06.261605",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "Machine",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
