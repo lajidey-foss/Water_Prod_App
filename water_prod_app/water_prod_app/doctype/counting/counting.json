@@ -1,0 +1,156 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-25 14:14:27.655827",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "count_id",
+  "date_check",
+  "status",
+  "issue_from",
+  "issued_by",
+  "column_break_tvvl",
+  "company",
+  "type",
+  "operator",
+  "for_machine",
+  "target_warehouse",
+  "section_break_tkbt",
+  "unit_reading",
+  "section_break_jkps",
+  "total_unit",
+  "column_break_ygwx",
+  "total_reading",
+  "section_break_zrio",
+  "working"
+ ],
+ "fields": [
+  {
+   "fieldname": "count_id",
+   "fieldtype": "Data",
+   "label": "Count Id"
+  },
+  {
+   "fieldname": "date_check",
+   "fieldtype": "Date",
+   "label": "Date Check"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nPending\nApproved"
+  },
+  {
+   "fieldname": "issue_from",
+   "fieldtype": "Link",
+   "label": "Issue From",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_tvvl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nOUT\nIN"
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fieldname": "for_machine",
+   "fieldtype": "Link",
+   "label": "For Machine",
+   "options": "Machine"
+  },
+  {
+   "fieldname": "issued_by",
+   "fieldtype": "Link",
+   "label": "Issued By",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_break_jkps",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_unit",
+   "fieldtype": "Float",
+   "label": "Total Unit"
+  },
+  {
+   "fieldname": "column_break_ygwx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_reading",
+   "fieldtype": "Float",
+   "label": "Total Reading"
+  },
+  {
+   "fieldname": "section_break_tkbt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "unit_reading",
+   "fieldtype": "Table",
+   "label": "Unit Reading",
+   "options": "Counting Detail"
+  },
+  {
+   "fieldname": "target_warehouse",
+   "fieldtype": "Link",
+   "label": "Target Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "section_break_zrio",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "working",
+   "fieldtype": "Table",
+   "label": "Working",
+   "options": "Working Sheet"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-25 17:49:07.662207",
+ "modified_by": "Administrator",
+ "module": "Water Prod App",
+ "name": "Counting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
