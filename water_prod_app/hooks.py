@@ -251,6 +251,7 @@ fixtures = [
                 (
                     "Stock Entry-custom_ppm_operator",
                     "Stock Entry-custom_ppm_machine",
+                    "Purchase Invoice Item-custom_count_qty",
 				),
 			]
 		],

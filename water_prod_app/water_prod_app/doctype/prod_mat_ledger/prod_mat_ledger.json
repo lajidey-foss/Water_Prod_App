@@ -5,7 +5,6 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "code",
   "voucher_date",
   "doc_doctype",
   "doc_name",
@@ -18,11 +17,6 @@
   "company"
  ],
  "fields": [
-  {
-   "fieldname": "code",
-   "fieldtype": "Data",
-   "label": "Code"
-  },
   {
    "fieldname": "voucher_date",
    "fieldtype": "Date",
@@ -84,7 +78,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-26 10:58:09.007716",
+ "modified": "2025-09-02 17:46:38.342657",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "Prod Mat Ledger",
