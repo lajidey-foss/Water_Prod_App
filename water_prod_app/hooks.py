@@ -140,7 +140,9 @@ doctype_js = {"Stock Entry" : "./utils/prod_st_mat.js",}
 doc_events = {
 	"Stock Entry": {
 		"after_insert": "water_prod_app.utils.prod_mat.work_flow"
-	}
+	},
+    "Purchase Invoice": {"validate": "water_prod_app.utils.prod_mat.purchase_count"},
+    "Collections": {"validate": "water_prod_app.utils.prod_mat.collection_inx"}
 }
 
 # Scheduled Tasks
