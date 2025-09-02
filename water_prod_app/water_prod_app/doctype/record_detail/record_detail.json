@@ -8,9 +8,13 @@
  "field_order": [
   "item",
   "qty",
-  "reading",
-  "from_batch",
-  "cleared"
+  "uom",
+  "weight",
+  "figure",
+  "operator",
+  "machine",
+  "input_cone",
+  "cone_weight"
  ],
  "fields": [
   {
@@ -21,40 +25,66 @@
    "options": "Item"
   },
   {
-   "fieldname": "reading",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Reading"
-  },
-  {
-   "fieldname": "from_batch",
-   "fieldtype": "Data",
-   "label": "From Batch"
-  },
-  {
-   "default": "0",
-   "fieldname": "cleared",
-   "fieldtype": "Check",
-   "in_list_view": 1,
-   "label": "Cleared"
-  },
-  {
    "bold": 1,
    "fieldname": "qty",
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Qty"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UoM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "figure",
+   "fieldtype": "Data",
+   "label": "Figure",
+   "read_only": 1
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fieldname": "machine",
+   "fieldtype": "Link",
+   "label": "Machine",
+   "options": "Machine"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Weight"
+  },
+  {
+   "default": "0",
+   "fieldname": "input_cone",
+   "fieldtype": "Check",
+   "label": "input Cone"
+  },
+  {
+   "fieldname": "cone_weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Cone Weight"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-11-08 23:53:26.104438",
+ "modified": "2025-08-28 16:38:56.450082",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "Record Detail",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

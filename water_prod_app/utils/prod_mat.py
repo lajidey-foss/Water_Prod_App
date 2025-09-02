@@ -40,4 +40,53 @@ def prod_extra_cost (data):
     data.update({"additional_costs":charges_items_row})
     data.save()
 
+def purchase_count (doc, method):
+    """ hook count into purchase """
+    # check if count is enabled
+    if not frappe.db.get_single_value('Counting Setting', 'enabled'):
+        return
+    
+    # run app
+    if (doc.doctype == "Purchase Invoice"):
+        run_count_ledger(doc)
+    
+def run_count_ledger(data):
+    """ intercept purchase """
+    get_list = frappe.db.sql(
+        f"""
+            select item, uom, parentfield, parenttype from `tabCountings Set Details` where parenttype = "Counting Setting"
+        """, as_dict=1,
+    )
+    #count_ledger = frappe.new_doc("Prod Mat Ledger")
+    for row in get_list:
+        for pi in data.items:
+            if row.item == pi.item_name:
+                frappe.get_doc({
+                    "doctype": "Prod Mat Ledger",
+                    "doc_doctype": data.doctype,
+                    "company": data.company,
+                    "ledger_type": "IN",
+                    "item":       row.item,
+                    "uom":        row.uom,
+                    "doc_name": data.name,
+                    "warehouse": data.set_warehouse,
+                    "voucher_date": data.posting_date,
+                    "figure": pi.custom_count_qty 
+                }).insert(ignore_permissions=True)
+                break           
+    #
 
+def collection_inx(doc, method):
+    """ """
+    for record in doc.records:
+        frappe.get_doc({
+            "doctype": "Prod Mat Ledger",
+            "doc_doctype": doc.doctype,
+            "ledger_type": "OUT",
+            "item":       record.item,
+            "uom":        record.uom,
+            "doc_name": doc.name,
+            "warehouse": doc.issue_from,
+            "voucher_date": doc.voucher_date,
+            "figure": record.qty * -1
+        }).insert(ignore_permissions=True)

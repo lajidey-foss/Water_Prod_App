@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-26 10:50:48.409501",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "code",
+  "voucher_date",
+  "doc_doctype",
+  "doc_name",
+  "item",
+  "figure",
+  "ledger_type",
+  "warehouse",
+  "uom",
+  "auto",
+  "company"
+ ],
+ "fields": [
+  {
+   "fieldname": "code",
+   "fieldtype": "Data",
+   "label": "Code"
+  },
+  {
+   "fieldname": "voucher_date",
+   "fieldtype": "Date",
+   "label": "Voucher Date"
+  },
+  {
+   "fieldname": "doc_doctype",
+   "fieldtype": "Link",
+   "label": "Doc Doctype",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "doc_name",
+   "fieldtype": "Data",
+   "label": "Doc Name"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "figure",
+   "fieldtype": "Float",
+   "label": "Figure"
+  },
+  {
+   "fieldname": "ledger_type",
+   "fieldtype": "Select",
+   "label": "Ledger Type",
+   "options": "\nIN\nOUT"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UoM",
+   "options": "UOM"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto",
+   "fieldtype": "Check",
+   "label": "Auto"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-26 10:58:09.007716",
+ "modified_by": "Administrator",
+ "module": "Water Prod App",
+ "name": "Prod Mat Ledger",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

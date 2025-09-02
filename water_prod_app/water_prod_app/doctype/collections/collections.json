@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:C{DD}-{MM}-{#####}",
+ "creation": "2025-08-26 10:59:48.036732",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "voucher_date",
+  "operator",
+  "issued_by",
+  "column_break_wabi",
+  "posting_time",
+  "machine",
+  "column_break_agnq",
+  "type",
+  "issue_from",
+  "section_break_qdew",
+  "records",
+  "section_break_irjf",
+  "total_qty",
+  "column_break_upgf",
+  "weight_figure"
+ ],
+ "fields": [
+  {
+   "fieldname": "voucher_date",
+   "fieldtype": "Date",
+   "label": "Voucher Date"
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nRolls\nBags\n--"
+  },
+  {
+   "fieldname": "issue_from",
+   "fieldtype": "Link",
+   "label": "Issue From",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fieldname": "machine",
+   "fieldtype": "Link",
+   "label": "Machine",
+   "options": "Machine"
+  },
+  {
+   "fieldname": "issued_by",
+   "fieldtype": "Link",
+   "label": "Issued By",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_agnq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_qdew",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "records",
+   "fieldtype": "Table",
+   "label": "Records",
+   "options": "Record Detail"
+  },
+  {
+   "fieldname": "section_break_irjf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_upgf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wabi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weight_figure",
+   "fieldtype": "Float",
+   "label": "Weight Figure",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-29 23:27:11.138008",
+ "modified_by": "Administrator",
+ "module": "Water Prod App",
+ "name": "Collections",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
