@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-02 19:42:03.891842",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "finished_product",
+  "close_qty",
+  "open_qty",
+  "expected_yield",
+  "difference_in_quantity"
+ ],
+ "fields": [
+  {
+   "fieldname": "finished_product",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Finished Product",
+   "options": "Item"
+  },
+  {
+   "fieldname": "close_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Closing Quantity"
+  },
+  {
+   "fieldname": "open_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Opening Quantity"
+  },
+  {
+   "fieldname": "expected_yield",
+   "fieldtype": "Float",
+   "label": "Expected Yield"
+  },
+  {
+   "fieldname": "difference_in_quantity",
+   "fieldtype": "Float",
+   "label": "Difference In Quantity"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-04 20:31:13.979045",
+ "modified_by": "Administrator",
+ "module": "Water Prod App",
+ "name": "Prod Cycle Closing Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

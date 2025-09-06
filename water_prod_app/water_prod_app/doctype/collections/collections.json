@@ -7,14 +7,15 @@
  "engine": "InnoDB",
  "field_order": [
   "voucher_date",
-  "operator",
+  "issue_from",
   "issued_by",
   "column_break_wabi",
   "posting_time",
-  "machine",
-  "column_break_agnq",
   "type",
-  "issue_from",
+  "production_cycle",
+  "column_break_agnq",
+  "machine",
+  "operator",
   "section_break_qdew",
   "records",
   "section_break_irjf",
@@ -24,11 +25,13 @@
  ],
  "fields": [
   {
+   "default": "Today",
    "fieldname": "voucher_date",
    "fieldtype": "Date",
    "label": "Voucher Date"
   },
   {
+   "default": "Now",
    "fieldname": "posting_time",
    "fieldtype": "Time",
    "label": "Posting Time"
@@ -100,12 +103,18 @@
    "fieldtype": "Float",
    "label": "Weight Figure",
    "read_only": 1
+  },
+  {
+   "fieldname": "production_cycle",
+   "fieldtype": "Link",
+   "label": "Production Cycle ",
+   "options": "Prod Cycle Open"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-29 23:27:11.138008",
+ "modified": "2025-09-06 16:21:37.843169",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "Collections",

@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "POC-.MM.-.#####",
+ "creation": "2025-09-02 18:23:15.382253",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "cycle_start_date",
+  "cycle_end_date",
+  "company",
+  "column_break_pisp",
+  "posting_date",
+  "posting_time",
+  "column_break_ljth",
+  "supervisor",
+  "section_break_dhmb",
+  "count_figures",
+  "section_break_mtgf",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "cycle_start_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Cycle Start Date"
+  },
+  {
+   "fieldname": "cycle_end_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Cycle End Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pisp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_ljth",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nIn Progress\nCompleted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supervisor",
+   "fieldtype": "Link",
+   "label": "Supervisor",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "section_break_dhmb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "count_figures",
+   "fieldtype": "Table",
+   "label": "Opening Count Figures",
+   "options": "Prod Cycle Open Detail"
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "fieldname": "section_break_mtgf",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-04 19:57:52.584162",
+ "modified_by": "Administrator",
+ "module": "Water Prod App",
+ "name": "Prod Cycle Open",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

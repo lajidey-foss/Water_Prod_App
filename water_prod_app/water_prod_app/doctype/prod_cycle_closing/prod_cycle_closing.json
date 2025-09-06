@@ -1,0 +1,182 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "PCC-.MM.-.#####",
+ "creation": "2025-09-02 18:38:06.064371",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "cycle_start_date",
+  "posting_date",
+  "column_break_rpab",
+  "cycle_end_date",
+  "posting_time",
+  "column_break_wbzw",
+  "prod_cycle_open",
+  "status",
+  "section_break_bcka",
+  "company",
+  "column_break_qohx",
+  "supervisor",
+  "section_break_svdo",
+  "closing_figure_reconciliation",
+  "section_break_kpyi",
+  "production_reconciliation_details",
+  "section_break_jxqk",
+  "prod_count_truckings",
+  "section_break_lxud",
+  "total_loadout_count",
+  "column_break_ptfc",
+  "expected_yield"
+ ],
+ "fields": [
+  {
+   "fetch_from": "prod_cycle_open.cycle_start_date",
+   "fieldname": "cycle_start_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Cycle Start Date",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "cycle_end_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Cycle End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rpab",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "fieldname": "column_break_wbzw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "prod_cycle_open",
+   "fieldtype": "Link",
+   "label": "Prod Cycle Open",
+   "options": "Prod Cycle Open",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nSubmitted\nQueued\nFailed\nCancelled"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_bcka",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_qohx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "prod_cycle_open.supervisor",
+   "fieldname": "supervisor",
+   "fieldtype": "Link",
+   "label": "Supervisor",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_svdo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "closing_figure_reconciliation",
+   "fieldtype": "Table",
+   "label": "Closing Figure Reconciliation",
+   "options": "Prod Cycle Closing Detail"
+  },
+  {
+   "fieldname": "section_break_kpyi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "production_reconciliation_details",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "section_break_jxqk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "prod_count_truckings",
+   "fieldtype": "Table",
+   "label": "Prod Count Truckings",
+   "options": "Prod Loadout Reference"
+  },
+  {
+   "fieldname": "section_break_lxud",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ptfc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expected_yield",
+   "fieldtype": "Float",
+   "label": "Expected Yield"
+  },
+  {
+   "fieldname": "total_loadout_count",
+   "fieldtype": "Float",
+   "label": "Total Loadout Count"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-06 00:36:42.248607",
+ "modified_by": "Administrator",
+ "module": "Water Prod App",
+ "name": "Prod Cycle Closing",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
