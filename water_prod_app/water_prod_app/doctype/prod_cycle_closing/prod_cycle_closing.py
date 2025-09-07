@@ -15,11 +15,6 @@ def quick_create(end, cycle, items):
     
     if isinstance(items, str):
          items = json.loads(items)
-         
-    closing_figures = [{
-         'finished_product': row.get('item_code'),
-         'close_qty': row.get('qty')
-	} for row in items]
 
     loadouts = []
     total_loadout = frappe.db.sql(
@@ -30,7 +25,19 @@ def quick_create(end, cycle, items):
         loadouts = [{
             'prod_loadout': rx.get('name')
         } for rx in frappe.db.get_values("Prod Loadout Count",{"prod_cycle": ("=", cycle)},["name"], as_dict=True )]
-    
+    # get opening count from open cycle
+    open_count = frappe.db.sql(f"""
+                               SELECT quantity FROM `tabProd Cycle Open Detail` WHERE `parent` = '{cycle}' """
+                               )[0][0] or 0
+    closing_figures = [{
+         'finished_product': row.get('item_code'),
+         'close_qty': row.get('qty'),
+         'open_qty': open_count
+	} for row in items]
+
+    total_expected_produce = open_count + total_loadout + closing_figures[0]['close_qty']
+    #print(f"\n\n\n[==================================]\n {closing_figures[0]['close_qty']} \n\n ")
+    # begin creation
     try:
         doc = frappe.get_doc({
             'doctype': 'Prod Cycle Closing',
@@ -38,9 +45,11 @@ def quick_create(end, cycle, items):
             'prod_cycle_open': cycle,
             'closing_figure_reconciliation': closing_figures,
             'prod_count_truckings': loadouts,
-            'total_loadout_count' : total_loadout
+            'total_loadout_count' : total_loadout,
+            'total_quantity': total_expected_produce,
+            'cycle_prod_quantity': total_loadout + closing_figures[0]['close_qty']
         })
-        #print(f"\n\n\n[==================================]\n {doc.prod_count_truckings[0].count_quantity} \n\n ")
+        
         doc.insert()
         return doc.name
     except Exception:

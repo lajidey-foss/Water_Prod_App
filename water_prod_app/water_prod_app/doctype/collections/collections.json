@@ -21,13 +21,16 @@
   "section_break_irjf",
   "total_qty",
   "column_break_upgf",
-  "weight_figure"
+  "weight_figure",
+  "section_break_zyfb",
+  "baggers_detail"
  ],
  "fields": [
   {
    "default": "Today",
    "fieldname": "voucher_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Voucher Date"
   },
   {
@@ -51,6 +54,7 @@
   {
    "fieldname": "operator",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Operator",
    "options": "Operator"
   },
@@ -63,6 +67,7 @@
   {
    "fieldname": "issued_by",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Issued By",
    "options": "User"
   },
@@ -109,12 +114,22 @@
    "fieldtype": "Link",
    "label": "Production Cycle ",
    "options": "Prod Cycle Open"
+  },
+  {
+   "fieldname": "section_break_zyfb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "baggers_detail",
+   "fieldtype": "Table",
+   "label": "Baggers Detail",
+   "options": "Packing Detail"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-06 16:21:37.843169",
+ "modified": "2025-09-07 19:18:47.029373",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "Collections",
