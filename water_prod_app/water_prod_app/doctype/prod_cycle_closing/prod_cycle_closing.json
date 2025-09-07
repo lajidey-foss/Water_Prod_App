@@ -27,6 +27,9 @@
   "section_break_lxud",
   "total_loadout_count",
   "column_break_ptfc",
+  "total_quantity",
+  "column_break_qthg",
+  "cycle_prod_quantity",
   "expected_yield"
  ],
  "fields": [
@@ -142,20 +145,43 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "0",
    "fieldname": "expected_yield",
    "fieldtype": "Float",
-   "label": "Expected Yield"
+   "label": "Prod Expected Yield"
   },
   {
+   "default": "0",
    "fieldname": "total_loadout_count",
    "fieldtype": "Float",
-   "label": "Total Loadout Count"
+   "label": "Total Loadout Count",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qthg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "fieldname": "cycle_prod_quantity",
+   "fieldtype": "Float",
+   "label": "Cycle Prod Quantity",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-06 00:36:42.248607",
+ "modified": "2025-09-07 18:55:17.524611",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "Prod Cycle Closing",
