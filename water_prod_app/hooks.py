@@ -136,12 +136,11 @@ doctype_js = {"Stock Entry" : "./utils/prod_st_mat.js",}
 # Document Events
 # ---------------
 # Hook on document methods and events
-
 doc_events = {
 	"Stock Entry": {
 		"after_insert": "water_prod_app.utils.prod_mat.work_flow"
 	},
-    "Purchase Invoice": { "on_submit": "water_prod_app.utils.prod_mat.purchase_count"},
+    "Purchase Invoice": { "on_submit": "water_prod_app.utils.prod_mat.purchase_count" },
     "Collections": { "after_insert": "water_prod_app.utils.prod_mat.collection_inx"}
 }
 

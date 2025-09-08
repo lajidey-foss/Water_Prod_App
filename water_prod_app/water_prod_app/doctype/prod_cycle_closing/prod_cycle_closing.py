@@ -36,7 +36,8 @@ def quick_create(end, cycle, items):
 	} for row in items]
 
     total_expected_produce = open_count + total_loadout + closing_figures[0]['close_qty']
-    #print(f"\n\n\n[==================================]\n {closing_figures[0]['close_qty']} \n\n ")
+    # print(f"\n\n\n[==================================]\n {closing_figures} \n\n ")
+    # [{'finished_product': 'Sachet Water 50cl', 'close_qty': 4510, 'open_qty': 100.0}] 
     # begin creation
     try:
         doc = frappe.get_doc({
