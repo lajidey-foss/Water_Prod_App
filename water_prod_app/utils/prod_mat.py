@@ -54,26 +54,33 @@ def run_count_ledger(data):
     """ intercept purchase """
     get_list = frappe.db.sql(
         f"""
-            select item, uom, parentfield, parenttype from `tabCountings Set Details` where parenttype = "Counting Setting"
+            select item, uom, parentfield, parenttype from `tabCountings Set Details` where parenttype = 'Counting Setting'
         """, as_dict=1,
     )
-    #count_ledger = frappe.new_doc("Prod Mat Ledger")
-    for row in get_list:
-        for pi in data.items:
-            if row.item == pi.item_name:
-                frappe.get_doc({
-                    "doctype": "Prod Mat Ledger",
-                    "doc_doctype": data.doctype,
-                    "company": data.company,
-                    "ledger_type": "IN",
-                    "item":       row.item,
-                    "uom":        row.uom,
-                    "doc_name": data.name,
-                    "warehouse": data.set_warehouse,
-                    "voucher_date": data.posting_date,
-                    "figure": pi.custom_count_qty 
-                }).insert(ignore_permissions=True)
-                break           
+    pm_count_list = [{'item': pm.get('item'), 'uom': pm.get('uom')}
+                     for pm in frappe.db.sql(""" select item, uom, parentfield, parenttype from `tabCountings Set Details` where parenttype = 'Counting Setting' """,
+                                             as_dict=True)
+                     ]
+    # Convert to dict for quick lookup
+    pm_lookup = {row['item']: row['uom'] for row in pm_count_list}
+
+    for item in data.items:
+        if item.item_code in pm_lookup:
+            frappe.get_doc({
+                "doctype": "Prod Mat Ledger",
+                "doc_doctype": data.doctype,
+                "company": data.company,
+                "item": item.item_code,       # matched item_code
+                "uom": pm_lookup[item.item_code],  # uom from pm_list
+                "ledger_type": "IN",
+                "doc_name": data.name,
+                "warehouse": data.set_warehouse,
+                "voucher_date": data.posting_date,
+                "voucher_date": data.posting_date,
+                "figure": item.custom_count_qty
+            }).insert(ignore_permissions=True)
+
+    frappe.db.commit()           
     #
 
 def collection_inx(doc, method):
@@ -90,3 +97,5 @@ def collection_inx(doc, method):
             "voucher_date": doc.voucher_date,
             "figure": record.qty * -1
         }).insert(ignore_permissions=True)
+
+    frappe.db.commit()

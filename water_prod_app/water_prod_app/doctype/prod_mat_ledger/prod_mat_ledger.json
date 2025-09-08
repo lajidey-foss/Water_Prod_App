@@ -20,6 +20,7 @@
   {
    "fieldname": "voucher_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Voucher Date"
   },
   {
@@ -36,12 +37,14 @@
   {
    "fieldname": "item",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Item",
    "options": "Item"
   },
   {
    "fieldname": "figure",
    "fieldtype": "Float",
+   "in_list_view": 1,
    "label": "Figure"
   },
   {
@@ -78,7 +81,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-02 17:46:38.342657",
+ "modified": "2025-09-08 15:47:05.395503",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "Prod Mat Ledger",
