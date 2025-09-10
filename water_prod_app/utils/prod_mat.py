@@ -43,6 +43,7 @@ def prod_extra_cost (data):
 def purchase_count (doc, method):
     """ hook count into purchase """
     # check if count is enabled
+    print(f"[=====================================]\n\n\n\n\n return error code: {countx[0]['ipnx']}")
     if not frappe.db.get_single_value('Counting Setting', 'enabled'):
         return
     
