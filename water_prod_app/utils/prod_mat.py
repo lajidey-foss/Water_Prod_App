@@ -100,3 +100,7 @@ def collection_inx(doc, method):
         }).insert(ignore_permissions=True)
 
     frappe.db.commit()
+
+def update_count (doc, method):
+    print(f"[=====================================]\n\n\n\n\n return error code: got here! ")
+    issue_out_ledger(data)

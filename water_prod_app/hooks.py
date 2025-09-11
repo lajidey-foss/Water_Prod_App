@@ -140,8 +140,11 @@ doc_events = {
 	"Stock Entry": {
 		"after_insert": "water_prod_app.utils.prod_mat.work_flow"
 	},
-    "Purchase Invoice": { "validate": "water_prod_app.utils.prod_mat.purchase_count" },
-    "Collections": { "after_insert": "water_prod_app.utils.prod_mat.collection_inx"}
+    "Purchase Invoice": { "validate": "water_prod_app.water_prod_app.utils.prod_mat.purchase_count" },
+    "Collections": { "after_insert": "water_prod_app.utils.prod_mat.collection_inx"},
+    "Sales Invoice": {
+        "validate": "water_prod_app.water_prod_app.utils.prod_mat.update_count"
+    }
 }
 
 # Scheduled Tasks
