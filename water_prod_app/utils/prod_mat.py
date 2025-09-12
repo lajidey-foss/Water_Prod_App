@@ -53,7 +53,7 @@ def purchase_count (doc, method):
     
 def run_count_ledger(data):
     """ intercept purchase """
-    print(f"[=====================================]\n\n\n\n\n return error code: {countx[0]['ipnx']}")
+    #print(f"[=====================================]\n\n\n\n\n return error code: {countx[0]['ipnx']}")
     pm_count_list = [{'item': pm.get('item'), 'uom': pm.get('uom')}
                      for pm in frappe.db.sql(""" select item, uom, parentfield, parenttype from `tabCountings Set Details` where parenttype = 'Counting Setting' """,
                                              as_dict=True)
@@ -72,7 +72,6 @@ def run_count_ledger(data):
                 "ledger_type": "IN",
                 "doc_name": data.name,
                 "warehouse": data.set_warehouse,
-                "voucher_date": data.posting_date,
                 "voucher_date": data.posting_date,
                 "figure": item.custom_count_qty
             }).insert(ignore_permissions=True)
