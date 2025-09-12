@@ -43,7 +43,6 @@ def prod_extra_cost (data):
 def purchase_count (doc, method):
     """ hook count into purchase """
     # check if count is enabled
-    #print(f"[=====================================]\n\n\n\n\n return error code: {countx[0]['ipnx']}")
     if not frappe.db.get_single_value('Counting Setting', 'enabled'):
         return
     
@@ -54,6 +53,7 @@ def purchase_count (doc, method):
     
 def run_count_ledger(data):
     """ intercept purchase """
+    print(f"[=====================================]\n\n\n\n\n return error code: {countx[0]['ipnx']}")
     pm_count_list = [{'item': pm.get('item'), 'uom': pm.get('uom')}
                      for pm in frappe.db.sql(""" select item, uom, parentfield, parenttype from `tabCountings Set Details` where parenttype = 'Counting Setting' """,
                                              as_dict=True)
