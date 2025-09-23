@@ -4,7 +4,7 @@ frappe.listview_settings['Prod Cycle Closing'] = {
         listview.page.add_inner_button(__('Quick Add'), () => {
             // Define the dialog
             const dialog = new frappe.ui.Dialog({
-                title: __('Quick Add YourDocType'),
+                title: __('New Prod Closing Cycle'),
                 fields: [
                     {
                         label: __('Cycle End Date'),
