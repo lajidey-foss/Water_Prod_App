@@ -2,8 +2,10 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Collections", {
-	refresh(frm) {
-
+	onload: function (frm) {
+        frm.set_query("production_cycle", function (doc) {
+            return { filters: { status: "In Progress"} };
+		});
 	},
     setup: (frm) => {
         frm.get_total_fig = function(frm){

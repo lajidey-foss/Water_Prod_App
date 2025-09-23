@@ -17,7 +17,9 @@
   "section_break_dhmb",
   "count_figures",
   "section_break_mtgf",
-  "status"
+  "status",
+  "column_break_creg",
+  "prod_cycle_closing"
  ],
  "fields": [
   {
@@ -86,12 +88,22 @@
   {
    "fieldname": "section_break_mtgf",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "prod_cycle_closing",
+   "fieldtype": "Data",
+   "label": "Prod Cycle Closing",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_creg",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-04 19:57:52.584162",
+ "modified": "2025-09-23 13:53:46.907576",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "Prod Cycle Open",
