@@ -18,7 +18,8 @@ frappe.listview_settings['Prod Cycle Closing'] = {
                         fieldname: 'prod_cycle_open',
                         fieldtype: 'Link',
                         options: 'Prod Cycle Open',
-                        reqd: 1
+                        reqd: 1,
+                        get_query: () => poc_query(),
                     },
                     {
                         label: __('Closing Figure Reconciliation'),
@@ -70,6 +71,11 @@ frappe.listview_settings['Prod Cycle Closing'] = {
             });
 
             dialog.show();
+            const poc_query = () => {
+                return {
+                    filters: { status: "In Progress"},
+                }
+            }
         });
     }
 };

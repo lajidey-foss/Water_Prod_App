@@ -2,9 +2,12 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Prod Cycle Closing", {
-	// refresh(frm) {
-
-	// },
+    onload: function(frm) {
+        frm.set_query("prod_cycle_open", function (doc) {
+            return { filters: { status: "In Progress"} };
+			//return { filters: { status: "Draft", docstatus: 1 } };
+		});
+    },
     setup: function(frm){
         frm.check_count_for_duplicates = function(frm, row){
             frm.doc.prod_count_truckings.forEach(lc => {
