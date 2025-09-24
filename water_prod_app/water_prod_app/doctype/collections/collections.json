@@ -16,6 +16,7 @@
   "column_break_agnq",
   "machine",
   "operator",
+  "status",
   "section_break_qdew",
   "records",
   "section_break_irjf",
@@ -43,7 +44,8 @@
    "fieldname": "type",
    "fieldtype": "Select",
    "label": "Type",
-   "options": "\nRolls\nBags\n--"
+   "options": "\nRolls\nBags",
+   "reqd": 1
   },
   {
    "fieldname": "issue_from",
@@ -124,12 +126,21 @@
    "fieldtype": "Table",
    "label": "Baggers Detail",
    "options": "Packing Detail"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nSubmitted\nCancelled",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-07 19:18:47.029373",
+ "modified": "2025-09-24 11:23:05.867853",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "Collections",
