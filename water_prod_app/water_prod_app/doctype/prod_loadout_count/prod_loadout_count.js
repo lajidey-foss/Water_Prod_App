@@ -4,7 +4,7 @@
 frappe.ui.form.on("Prod Loadout Count", {
 	onload: function (frm) {
         frm.set_query("prod_cycle", function (doc) {
-            return { filters: { status: "In Progress"} };
+            return { filters: { status: "Progress"} };
 		});
     }
 });

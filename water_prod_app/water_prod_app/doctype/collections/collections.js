@@ -4,7 +4,7 @@
 frappe.ui.form.on("Collections", {
 	onload: function (frm) {
         frm.set_query("production_cycle", function (doc) {
-            return { filters: { status: "In Progress"} };
+            return { filters: { status: "Progress"} };
 		});
 	},
     setup: (frm) => {

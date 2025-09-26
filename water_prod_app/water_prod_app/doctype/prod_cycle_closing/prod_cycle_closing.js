@@ -4,9 +4,11 @@
 frappe.ui.form.on("Prod Cycle Closing", {
     onload: function(frm) {
         frm.set_query("prod_cycle_open", function (doc) {
-            return { filters: { status: "In Progress"} };
+            return { filters: { status: "Progress"} };
 			//return { filters: { status: "Draft", docstatus: 1 } };
 		});
+
+        set_html_data(frm);
     },
     setup: function(frm){
         frm.check_count_for_duplicates = function(frm, row){
@@ -42,3 +44,15 @@ frappe.ui.form.on('Prod Loadout Reference', {
         frm.get_total_hours(frm)
     }
 });
+
+function set_html_data(frm) {
+    if(frm.doc.docstatus === 1 ) { /*&& frm.doc.status == "Completed"*/
+        frappe.call({
+            method: "get_collection_projection_details",
+            doc: frm.doc,
+            callback: (r) => {
+                frm.get_field("production_reconciliation_details").$wrapper.html(r.message);
+            },
+        });
+    }
+}

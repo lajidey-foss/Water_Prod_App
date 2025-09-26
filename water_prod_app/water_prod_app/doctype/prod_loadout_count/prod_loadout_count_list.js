@@ -65,7 +65,7 @@ frappe.listview_settings['Prod Loadout Count'] = {
             dialog.show();
             const poc_query = () => {
                 return {
-                    filters: { status: "In Progress"},
+                    filters: { status: "Progress"},
                 }
             }
         });

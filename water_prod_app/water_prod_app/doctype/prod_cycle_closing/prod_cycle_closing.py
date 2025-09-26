@@ -7,7 +7,34 @@ from frappe.model.document import Document
 
 
 class ProdCycleClosing(Document):
-	pass
+    def on_submit(self):
+        update_opening_cycle(self)
+
+
+    @frappe.whitelist()
+    def get_collection_projection_details(self):
+        collection = [{'name': cx.get('name'), 'type': cx.get('type'), 'item': cx.get('item'),
+                       'qty': cx.get('qty'), 'uom': cx.get('uom'), 'weight': cx.get('weight'), 'cone': cx.get('cone_weight') }
+            for cx in frappe.db.sql(""" 
+                                    SELECT c.name, c.type, c.production_cycle, r.item, r.qty, r.uom, r.weight, r.cone_weight 
+                                    FROM `tabCollections` c JOIN `tabRecord Detail` r 
+                                    ON c.name = r.parent
+                                    WHERE c.production_cycle = %s and c.docstatus = 1 """,
+                                     (self.prod_cycle_open), as_dict=True, )
+        ]
+
+        return frappe.render_template(
+            "water_prod_app/water_prod_app/doctype/prod_cycle_closing/closing_summary.html",
+            {"data": collection},
+        )
+
+
+def update_opening_cycle(self):
+    opening_cycle = frappe.get_doc("Prod Cycle Open", self.prod_cycle_open)
+    opening_cycle.prod_cycle_closing = self.name
+    opening_cycle.cycle_end_date = self.cycle_end_date
+    opening_cycle.status = "Completed"
+    opening_cycle.save()
 
 @frappe.whitelist()
 def quick_create(end, cycle, items):
@@ -36,8 +63,6 @@ def quick_create(end, cycle, items):
 	} for row in items]
 
     total_expected_produce = open_count + total_loadout + closing_figures[0]['close_qty']
-    # print(f"\n\n\n[==================================]\n {closing_figures} \n\n ")
-    # [{'finished_product': 'Sachet Water 50cl', 'close_qty': 4510, 'open_qty': 100.0}] 
     # begin creation
     try:
         doc = frappe.get_doc({
@@ -55,3 +80,5 @@ def quick_create(end, cycle, items):
         return doc.name
     except Exception:
         frappe.throw(_('Quick Add Failed'), _('Could not create document'))
+
+

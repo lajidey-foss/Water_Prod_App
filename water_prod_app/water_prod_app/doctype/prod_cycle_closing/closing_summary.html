@@ -1,0 +1,47 @@
+<div class="clearfix"></div>
+<div class="box">
+    <div class="grid-body">
+        <div class="rows text-center">
+            <!-- collection summary section-->
+            <div> 
+                ----********---- 
+            </div>
+            <!-- Section end -->
+
+            <!-- section -->
+            <div>                
+                <h3 class="text-center uppercase" style="color: #8D99A6">{{ _("Collection List") }}</h6>
+                <div class="tax-break-up" style="overflow-x: auto;">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th class="text-left">{{ _("Code") }}</th>
+                                <th class="text-left">{{ _("Type") }}</th>
+                                <th class="text-left">{{ _("Item") }}</th>
+                                <th class="text-left">{{ _("Qty") }}</th>
+                                <th class="text-right">{{ _("UoM") }}</th>
+                                <th class="text-right">{{ _("Weight") }}</th>
+                                <th class="text-right">{{ _("Cone") }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for d in data %}
+                            <tr>
+                                <td class="text-left">{{ _(d.name) }}</td>
+                                <td class="text-left">{{ _(d.type) }}</td>
+                                <td class="text-left">{{ _(d.item) }}</td>
+                                <td class="text-left">{{ d.qty }}</td>
+                                <td class='text-right'> {{ _(d.uom) }}</td>
+                                <td class='text-right'> {{ _(d.weight) }}</td>
+                                <td class='text-right'> {{ _(d.cone) }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Section end -->
+        </div>
+    </div>
+</div>
