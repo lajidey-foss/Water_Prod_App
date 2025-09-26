@@ -73,7 +73,7 @@ frappe.listview_settings['Prod Cycle Closing'] = {
             dialog.show();
             const poc_query = () => {
                 return {
-                    filters: { status: "In Progress"},
+                    filters: { status: "Progress"},
                 }
             }
         });

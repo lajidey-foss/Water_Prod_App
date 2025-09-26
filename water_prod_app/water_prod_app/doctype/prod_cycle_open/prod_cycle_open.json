@@ -30,6 +30,7 @@
    "label": "Cycle Start Date"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "cycle_end_date",
    "fieldtype": "Datetime",
    "in_list_view": 1,
@@ -62,7 +63,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\nIn Progress\nCompleted\nCancelled",
+   "options": "Draft\nProgress\nCompleted\nCancelled",
    "read_only": 1
   },
   {
@@ -116,7 +117,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-24 12:16:00.810506",
+ "modified": "2025-09-26 00:29:52.273533",
  "modified_by": "Administrator",
  "module": "Water Prod App",
  "name": "Prod Cycle Open",
