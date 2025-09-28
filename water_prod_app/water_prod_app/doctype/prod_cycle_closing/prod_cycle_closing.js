@@ -8,6 +8,7 @@ frappe.ui.form.on("Prod Cycle Closing", {
 			//return { filters: { status: "Draft", docstatus: 1 } };
 		});
 
+
         set_html_data(frm);
     },
     setup: function(frm){
@@ -30,6 +31,14 @@ frappe.ui.form.on("Prod Cycle Closing", {
             })
             frm.set_value('total_loadout_count', total_hour);
         }
+        //
+        frm.set_query("prod_loadout", "prod_count_truckings", function (doc, cdt, cdn) {
+            let d = locals[cdt][cdn];
+            return {
+                filters: [["Prod Loadout Count", "prod_cycle", "=", doc.prod_cycle_open],],
+            };
+        });
+        
     }
 });
 
